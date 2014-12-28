@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" layoutX="0.0" layoutY="0.0" prefHeight="799.0000999999975" prefWidth="910.0" xmlns:fx="http://javafx.com/fxml" fx:controller="addressbook.AddressbookGUIController">
+  <children>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <TabPane prefHeight="723.999977929685" prefWidth="910.9998779296875" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <tabs>
+        <Tab fx:id="hometabeid" text="Home">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <SplitPane dividerPositions="" focusTraversable="true" prefHeight="526.0" prefWidth="741.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <items>
+                    <AnchorPane id="AnchorPane" prefHeight="561.0" prefWidth="500.0">
+                      <children>
+                        <AnchorPane layoutX="0.0" layoutY="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="688.0" prefWidth="218.0">
+                          <children>
+                            <Group id="Group" layoutX="-1.0" layoutY="-2.0">
+                              <children>
+                                <ListView fx:id="listviewid" layoutX="1.0" layoutY="2.0" onEditStart="#handleButtonAction" onKeyPressed="#handleButtonAction" onKeyReleased="#handleButtonAction" onKeyTyped="#handleButtonAction" onMouseClicked="#handleButtonAction" onMouseDragged="#handleButtonAction" onMousePressed="#handleButtonAction" prefHeight="686.0" prefWidth="218.0" />
+                                <ScrollBar id="contactid" fx:id="contactscrollid" layoutX="205.0" layoutY="0.0" orientation="VERTICAL" prefHeight="688.0" />
+                                <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="2.0" spacing="5.0">
+                                  <children>
+                                    <TextField fx:id="searchid" prefWidth="205.0" promptText="Search Contact" HBox.hgrow="ALWAYS" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </Group>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="218.0" layoutY="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="687.0" prefWidth="691.0">
+                          <children>
+                            <Group id="Group" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                <VBox id="VBox" alignment="CENTER" layoutX="622.0" layoutY="0.0" spacing="5.0">
+                                  <children>
+                                    <ScrollBar fx:id="homescrollid" orientation="VERTICAL" prefHeight="688.0" VBox.vgrow="ALWAYS" />
+                                  </children>
+                                </VBox>
+                                <ImageView fx:id="showimageid" fitHeight="103.75" fitWidth="103.75" layoutX="0.0" layoutY="39.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                    <Image url="@../../resc/addr%20image%20resources/user_male.png" />
+                                  </image>
+                                </ImageView>
+                                <HBox id="HBox" alignment="CENTER" layoutX="400.0" layoutY="0.0" spacing="5.0">
+                                  <children>
+                                    <Button fx:id="adddtlid" mnemonicParsing="false" onAction="#handleButtonAction" onMouseClicked="#handleButtonAction" text="Add Detail" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="deletecontactid" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonAction" text="Delete Contact" HBox.hgrow="ALWAYS" />
+                                  </children>
+                                </HBox>
+                                <ImageView fx:id="mapshowid" fitHeight="347.25" fitWidth="463.0" layoutX="19.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                    <Image url="@../../resc/addr%20image%20resources/stock_people.png" />
+                                  </image>
+                                </ImageView>
+                              </children>
+                            </Group>
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </AnchorPane>
+                  </items>
+                </SplitPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="newtabid" text="New">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="579.0" prefWidth="741.0">
+              <children>
+                <ImageView fx:id="imageinsertid" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#handleButtonAction" opacity="0.1" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="508.0" AnchorPane.leftAnchor="458.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="30.0">
+                  <image>
+                    <Image url="@../../resc/addr%20image%20resources/user_male.png" />
+                  </image>
+                </ImageView>
+                <Group id="Group" layoutY="30.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="524.5">
+                  <children>
+                    <TextField fx:id="firstid" layoutX="0.0" layoutY="16.0" prefWidth="115.0" promptText="First" />
+                    <TextField fx:id="middleid" layoutX="115.0" layoutY="16.0" prefWidth="115.0" promptText="Middle" />
+                    <TextField fx:id="lastid" layoutX="230.0" layoutY="16.0" prefWidth="115.0" promptText="Last" />
+                    <TextField fx:id="nicktxtid" layoutX="1.0" layoutY="53.0" prefWidth="344.5" promptText="Nickname" />
+                    <Label layoutX="0.0" layoutY="0.0" text="Name" />
+                  </children>
+                </Group>
+                <Group id="Group" layoutX="42.0" layoutY="117.0">
+                  <children>
+                    <Label id="phnid" fx:id="phnlblid" layoutX="0.0" layoutY="0.0" text="Phone" />
+                    <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="16.0" spacing="0.0">
+                      <children>
+                        <TextField fx:id="phntxtid" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="230.0" promptText="example: 9000000009" />
+                        <ChoiceBox fx:id="phnchoiceid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Home" />
+                              <String fx:value="Personal" />
+                              <String fx:value="Office" />
+                              <String fx:value="Other" />
+                              <String fx:value="Custom" />
+                            </FXCollections>
+                          </items>
+                        </ChoiceBox>
+                        <Button fx:id="addphnid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="27.0" mnemonicParsing="false" prefWidth="27.0" text="+" />
+                      </children>
+                    </HBox>
+                  </children>
+                </Group>
+                <Group id="Group" layoutX="42.0" layoutY="171.0">
+                  <children>
+                    <Label id="emailid" fx:id="emllblid" layoutX="0.0" layoutY="0.0" text="Email" />
+                    <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="16.0" spacing="0.0">
+                      <children>
+                        <TextField id="emai" fx:id="emailtxtid" prefWidth="230.0" promptText="example@xyz.com" />
+                        <ChoiceBox id="emailchoiceid" fx:id="addemlchid">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Personal" />
+                              <String fx:value="Office" />
+                              <String fx:value="Other" />
+                              <String fx:value="Custom" />
+                            </FXCollections>
+                          </items>
+                        </ChoiceBox>
+                        <Button id="addemailid" fx:id="addemlid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="27.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="27.0" text="+" />
+                      </children>
+                    </HBox>
+                  </children>
+                </Group>
+                <Group id="Group" layoutX="42.0" layoutY="241.0">
+                  <children>
+                    <Label id="emailid" fx:id="wbid" layoutX="0.0" layoutY="0.0" text="Website" />
+                    <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="16.0" spacing="0.0">
+                      <children>
+                        <TextField fx:id="webtxtid" prefWidth="230.0" promptText="www.example.com" />
+                        <ChoiceBox id="webchoiceid" fx:id="webchid">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Personal" />
+                              <String fx:value="Office" />
+                              <String fx:value="Other" />
+                              <String fx:value="Custom" />
+                            </FXCollections>
+                          </items>
+                        </ChoiceBox>
+                        <Button id="addemailid" fx:id="webaddbtn" minWidth="27.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="27.0" text="+" />
+                      </children>
+                    </HBox>
+                  </children>
+                </Group>
+                <Group id="Group" layoutX="42.0" layoutY="286.0">
+                  <children>
+                    <Label id="addrid" fx:id="addrlblid" layoutX="0.0" layoutY="0.0" text="Address" />
+                    <VBox id="VBox" alignment="CENTER" layoutX="0.0" layoutY="16.0" spacing="0.0">
+                      <children>
+                        <TextField fx:id="housenoid" prefWidth="230.0" promptText="House No" />
+                        <TextField fx:id="streetid" prefWidth="230.0" promptText="Street" text="" />
+                        <TextField fx:id="cityid" prefWidth="230.0" promptText="City" />
+                        <TextField fx:id="stateid" prefWidth="230.0" promptText="State" text="" />
+                        <TextField fx:id="countryid" prefWidth="230.0" promptText="Country" />
+                        <TextField fx:id="pinid" prefWidth="230.0" promptText="Pin Code" />
+                      </children>
+                    </VBox>
+                    <HBox id="HBox" alignment="CENTER" layoutX="230.0" layoutY="16.0" spacing="0.0">
+                      <children>
+                        <ChoiceBox id="addrchoiceid" fx:id="addrchid" prefWidth="102.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Home" />
+                              <String fx:value="Office" />
+                              <String fx:value="Other" />
+                              <String fx:value="Custom" />
+                            </FXCollections>
+                          </items>
+                        </ChoiceBox>
+                        <Button id="addemailid" fx:id="addraddid" minWidth="27.0" mnemonicParsing="false" prefWidth="27.0" text="+" />
+                      </children>
+                    </HBox>
+                  </children>
+                </Group>
+                <Group id="Group" layoutX="413.0" layoutY="286.0">
+                  <children>
+                    <Label fx:id="bdlblid" layoutX="0.0" layoutY="0.0" text="Birthday" />
+                    <HBox id="HBox" alignment="CENTER" layoutX="0.0" layoutY="15.0" spacing="0.0">
+                      <children>
+                        <ComboBox fx:id="daychkid" onAction="#handleButtonAction" promptText="Day">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1" />
+                              <String fx:value="2" />
+                              <String fx:value="3" />
+                              <String fx:value="4" />
+                              <String fx:value="5" />
+                              <String fx:value="6" />
+                              <String fx:value="7" />
+                              <String fx:value="8" />
+                              <String fx:value="9" />
+                              <String fx:value="10" />
+                              <String fx:value="11" />
+                              <String fx:value="12" />
+                              <String fx:value="13" />
+                              <String fx:value="14" />
+                              <String fx:value="15" />
+                              <String fx:value="16" />
+                              <String fx:value="17" />
+                              <String fx:value="18" />
+                              <String fx:value="19" />
+                              <String fx:value="20" />
+                              <String fx:value="21" />
+                              <String fx:value="22" />
+                              <String fx:value="23" />
+                              <String fx:value="24" />
+                              <String fx:value="25" />
+                              <String fx:value="26" />
+                              <String fx:value="27" />
+                              <String fx:value="28" />
+                              <String fx:value="29" />
+                              <String fx:value="30" />
+                              <String fx:value="31" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <ComboBox id="mnthchkid" fx:id="mmchkid" promptText="Month">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="January" />
+                              <String fx:value="February" />
+                              <String fx:value="March" />
+                              <String fx:value="April" />
+                              <String fx:value="May" />
+                              <String fx:value="June" />
+                              <String fx:value="July" />
+                              <String fx:value="August" />
+                              <String fx:value="September" />
+                              <String fx:value="October" />
+                              <String fx:value="November" />
+                              <String fx:value="December" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <ComboBox id="ichkid" fx:id="ychkid" promptText="Year">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1900" />
+                              <String fx:value="1901" />
+                              <String fx:value="1902" />
+                              <String fx:value="1903" />
+                              <String fx:value="1904" />
+                              <String fx:value="1905" />
+                              <String fx:value="1906" />
+                              <String fx:value="1907" />
+                              <String fx:value="1908" />
+                              <String fx:value="1909" />
+                              <String fx:value="1910" />
+                              <String fx:value="1911" />
+                              <String fx:value="1912" />
+                              <String fx:value="1913" />
+                              <String fx:value="1914" />
+                              <String fx:value="1915" />
+                              <String fx:value="1916" />
+                              <String fx:value="1917" />
+                              <String fx:value="1918" />
+                              <String fx:value="1919" />
+                              <String fx:value="1920" />
+                              <String fx:value="1921" />
+                              <String fx:value="1922" />
+                              <String fx:value="1923" />
+                              <String fx:value="1924" />
+                              <String fx:value="1925" />
+                              <String fx:value="1926" />
+                              <String fx:value="1927" />
+                              <String fx:value="1928" />
+                              <String fx:value="1929" />
+                              <String fx:value="1930" />
+                              <String fx:value="1931" />
+                              <String fx:value="1932" />
+                              <String fx:value="1933" />
+                              <String fx:value="1934" />
+                              <String fx:value="1935" />
+                              <String fx:value="1936" />
+                              <String fx:value="1937" />
+                              <String fx:value="1938" />
+                              <String fx:value="1939" />
+                              <String fx:value="1940" />
+                              <String fx:value="1941" />
+                              <String fx:value="1942" />
+                              <String fx:value="1943" />
+                              <String fx:value="1944" />
+                              <String fx:value="1945" />
+                              <String fx:value="1946" />
+                              <String fx:value="1947" />
+                              <String fx:value="1948" />
+                              <String fx:value="1949" />
+                              <String fx:value="1950" />
+                              <String fx:value="1951" />
+                              <String fx:value="1952" />
+                              <String fx:value="1953" />
+                              <String fx:value="1954" />
+                              <String fx:value="1955" />
+                              <String fx:value="1956" />
+                              <String fx:value="1957" />
+                              <String fx:value="1958" />
+                              <String fx:value="1959" />
+                              <String fx:value="1960" />
+                              <String fx:value="1961" />
+                              <String fx:value="1962" />
+                              <String fx:value="1963" />
+                              <String fx:value="1964" />
+                              <String fx:value="1965" />
+                              <String fx:value="1966" />
+                              <String fx:value="1967" />
+                              <String fx:value="1968" />
+                              <String fx:value="1969" />
+                              <String fx:value="1970" />
+                              <String fx:value="1971" />
+                              <String fx:value="1972" />
+                              <String fx:value="1973" />
+                              <String fx:value="1974" />
+                              <String fx:value="1975" />
+                              <String fx:value="1976" />
+                              <String fx:value="1977" />
+                              <String fx:value="1978" />
+                              <String fx:value="1979" />
+                              <String fx:value="1980" />
+                              <String fx:value="1981" />
+                              <String fx:value="1982" />
+                              <String fx:value="1983" />
+                              <String fx:value="1984" />
+                              <String fx:value="1985" />
+                              <String fx:value="1986" />
+                              <String fx:value="1987" />
+                              <String fx:value="1988" />
+                              <String fx:value="1989" />
+                              <String fx:value="1990" />
+                              <String fx:value="1991" />
+                              <String fx:value="1992" />
+                              <String fx:value="1993" />
+                              <String fx:value="1994" />
+                              <String fx:value="1995" />
+                              <String fx:value="1996" />
+                              <String fx:value="1997" />
+                              <String fx:value="1998" />
+                              <String fx:value="1999" />
+                              <String fx:value="2000" />
+                              <String fx:value="2001" />
+                              <String fx:value="2002" />
+                              <String fx:value="2003" />
+                              <String fx:value="2004" />
+                              <String fx:value="2005" />
+                              <String fx:value="2006" />
+                              <String fx:value="2007" />
+                              <String fx:value="2008" />
+                              <String fx:value="2009" />
+                              <String fx:value="2010" />
+                              <String fx:value="2011" />
+                              <String fx:value="2012" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                      </children>
+                    </HBox>
+                  </children>
+                </Group>
+                <Button fx:id="savebtnid" layoutX="45.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleButtonAction" onMouseClicked="#handle" text="Save" />
+                <ScrollBar fx:id="newscrollid" maxWidth="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="688.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="897.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <MenuBar fx:id="menuid" layoutY="0.0" minHeight="-Infinity" minWidth="-1.0" prefWidth="910.9998779296875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File" fx:id="menufileid">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="New            Ctrl+N" fx:id="menuitmfilenewid">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="Save           Ctrl+S" fx:id="menuitmfilesaveid">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="Close          Ctrl+X" fx:id="menuitemfilecloseid">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="Delete        Ctrl+D" fx:id="menuitemdeleteid">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" onAction="#handleButtonAction" text="Edit" fx:id="menueditid">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="Delete" fx:id="editdeleteid" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" onAction="#handleButtonAction" text="Help" fx:id="menuhelpid">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="About" fx:id="menuitemabtid" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </children>
+</AnchorPane>
